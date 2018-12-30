@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+  ViewData["Title"] = "Home page";
+  var untilNewYear = new NyeCountdown().GetTimeUntilNye();
+  ViewData["days"] = untilNewYear.Days;
+  ViewData["hours"] = untilNewYear.Hours;
+  ViewData["minutes"] = untilNewYear.Minutes;
+  ViewData["seconds"] = untilNewYear.Seconds;
+}
+
+<h1>Hello, world!</h1>
+<h2>The time on the server is @DateTime.Now</h2>
+
+<strong>@ViewData["days"] days, @ViewData["hours"] hours, @ViewData["minutes"] minutes, @ViewData["seconds"] seconds until the new year!</strong>
